@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "movnight spike: Netflix control",
+  "version": "0.0.1",
+  "description": "Throwaway spike: read position and play/pause/seek the Netflix player.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Netflix control"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.netflix.com/*"],
+      "js": ["page.js"],
+      "world": "MAIN",
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.netflix.com/*"],
+      "js": ["bridge.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

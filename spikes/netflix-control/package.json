@@ -1,0 +1,15 @@
+{
+  "name": "spike-netflix-control",
+  "private": true,
+  "packageManager": "pnpm@9.15.9",
+  "version": "0.0.0",
+  "description": "M1 spike: read position and play/pause/seek the Netflix player from an MV3 popup",
+  "scripts": {
+    "build": "rm -rf dist && tsc && cp manifest.json src/popup.html dist/",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.287",
+    "typescript": "^5.6.3"
+  }
+}

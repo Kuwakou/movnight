@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "movnight spike: Disney+ control",
+  "version": "0.0.1",
+  "description": "Throwaway spike: read position and play/pause/seek the Disney+ player.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Disney+ control"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.disneyplus.com/*"],
+      "js": ["page.js"],
+      "world": "MAIN",
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.disneyplus.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

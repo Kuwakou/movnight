@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Netflix control</title>
+    <style>
+      body { font: 13px system-ui, sans-serif; width: 260px; margin: 12px; }
+      #pos { font: 600 22px ui-monospace, monospace; }
+      #meta, #error { color: #666; margin: 4px 0 10px; }
+      #error { color: #b00020; min-height: 1em; }
+      .row { display: flex; gap: 6px; margin-bottom: 8px; }
+      button { flex: 1; padding: 6px; }
+      input { flex: 1; min-width: 0; padding: 5px; }
+      details { margin-top: 10px; color: #444; }
+    </style>
+  </head>
+  <body>
+    <div id="pos">--:--</div>
+    <div id="meta">connecting…</div>
+    <div class="row">
+      <button id="back">−10s</button>
+      <button id="toggle">Play/Pause</button>
+      <button id="fwd">+10s</button>
+    </div>
+    <div class="row">
+      <input id="target" placeholder="mm:ss or h:mm:ss" />
+      <button id="seek">Seek</button>
+    </div>
+    <div id="error"></div>
+    <details>
+      <summary>Diagnostics</summary>
+      <p>Sets &lt;video&gt;.currentTime directly (+10s). Expected to break playback with M7375.</p>
+      <button id="raw">Raw currentTime +10s</button>
+    </details>
+    <script src="popup.js"></script>
+  </body>
+</html>

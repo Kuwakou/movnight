@@ -1,7 +1,7 @@
 # movnight
 
 Watch movies together online. Each user watches on their OWN streaming account
-(Netflix first, then Disney+, Apple TV) while a Chrome extension keeps playback in
+(Disney+ first, then Netflix, Apple TV) while a Chrome extension keeps playback in
 sync and shows a voice/video call panel.
 
 ## Stack (decided — don't change without asking)

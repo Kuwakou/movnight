@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Disney+ control</title>
+    <style>
+      body { font: 13px system-ui, sans-serif; width: 280px; margin: 12px; }
+      #pos { font: 600 22px ui-monospace, monospace; }
+      #meta, #seek-result { color: #666; margin: 4px 0 10px; }
+      #error { color: #b00020; min-height: 1em; margin-bottom: 6px; }
+      .row { display: flex; gap: 6px; margin-bottom: 8px; }
+      button { flex: 1; padding: 6px; }
+      input { flex: 1; min-width: 0; padding: 5px; }
+      details { margin-top: 10px; color: #444; }
+      #path, #note { font: 11px ui-monospace, monospace; word-break: break-all; }
+    </style>
+  </head>
+  <body>
+    <div id="pos">--:--</div>
+    <div id="meta">connecting…</div>
+    <div class="row">
+      <button id="back">−10s</button>
+      <button id="toggle">Play/Pause</button>
+      <button id="fwd">+10s</button>
+    </div>
+    <div class="row">
+      <input id="target" placeholder="mm:ss or h:mm:ss" />
+      <button id="seek">Seek</button>
+    </div>
+    <div id="seek-result">last seek: –</div>
+    <div id="error"></div>
+    <details>
+      <summary>Diagnostics</summary>
+      <p id="path">video: –</p>
+      <p>Each logs to the Disney+ tab's console (DevTools → Console).</p>
+      <div class="row"><button id="dump">Dump player info</button><button id="probeRanges">Ranges</button></div>
+      <div class="row"><button id="probeApi">Player API</button><button id="probeControls">Controls</button></div>
+      <div class="row"><button id="probeKeys">Key → (ArrowRight)</button></div>
+      <div class="row"><button id="probeMediaPlayer">mediaPlayer details</button></div>
+      <p id="note"></p>
+    </details>
+    <script src="popup.js"></script>
+  </body>
+</html>

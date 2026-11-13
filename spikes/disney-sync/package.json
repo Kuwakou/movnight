@@ -1,0 +1,22 @@
+{
+  "name": "spike-disney-sync",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.15.9",
+  "version": "0.0.0",
+  "description": "M1 spike: sync Disney+ playback between two browser windows through a local relay",
+  "scripts": {
+    "build": "rm -rf dist && tsc && cp manifest.json src/popup.html dist/",
+    "relay": "node relay/server.ts",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p relay"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.287",
+    "@types/node": "^24.0.0",
+    "@types/ws": "^8.5.12",
+    "typescript": "^5.9.0"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "movnight spike: Disney+ sync",
+  "version": "0.0.1",
+  "description": "Throwaway spike: sync Disney+ playback between windows through a local relay.",
+  "minimum_chrome_version": "116",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Disney+ sync"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.disneyplus.com/*"],
+      "js": ["page.js"],
+      "world": "MAIN",
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.disneyplus.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
